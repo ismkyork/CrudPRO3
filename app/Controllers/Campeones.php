@@ -7,7 +7,13 @@ class Campeones extends Controller{
 
     public function index() {
 
-        return view('campeones/inicio');
+        $champ= new Campeon();
+        $info['campeones']=$campeon->orderBy('id','ASC')->findAll();
+        
+        $info['header']= view('templates/header');
+        $info ['pie']= view('template/pieDePagina');
+        return view('campeones/inicio',$info);
+
 
     }
 
