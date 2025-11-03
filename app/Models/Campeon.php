@@ -7,6 +7,6 @@ class Campeon extends Model{
     protected $table      = 'campeones';
     // Uncomment below if you want add primary key
     protected $primaryKey = 'id';
-    protected $allowedFields = ['nombre', 'ruta_imagen'];
+    protected $allowedFields = ['nombre', 'ruta_imagen', 'raza', 'region', 'rol', 'fecha_lanzamiento', 'tipo_daño'];
 
 }

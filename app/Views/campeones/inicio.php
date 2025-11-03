@@ -11,7 +11,6 @@
     <h1>Lista de campeones de League Of Legends</h1>
     <?php print_r($campeones); ?>
 
-
     <table class="table table-light">
         <thead class="thead-light">
             <tr>
