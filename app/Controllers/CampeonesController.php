@@ -16,18 +16,25 @@ class CampeonesController extends Controller{
       ];
       
       $info['pieDePagina']=view('template/pieDePagina');
-        return view('vistas/inicio',$info);
-
+      $info['cabecera']=view('template/cabecera');
+      return view('vistas/inicio',$info);
+      
     }
-
+    
     public function crear(){
 
-      return view('vistas/crear');
+      $info['pieDePagina']=view('template/pieDePagina');
+      $info['cabecera']=view('template/cabecera');
+      
+      return view('vistas/crear',$info);
     }
-
+    
     public function editar(){
-
-      return view('vistas/editar');
+      
+      $info['pieDePagina']=view('template/pieDePagina');
+      $info['cabecera']=view('template/cabecera');
+      
+      return view('vistas/editar',$info);
     }
 
 }
