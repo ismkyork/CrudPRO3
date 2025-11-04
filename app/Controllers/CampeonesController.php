@@ -37,4 +37,35 @@ class CampeonesController extends Controller{
       return view('vistas/editar',$info);
     }
 
-}
+    public function guardar(){
+      $champ = new CampeonModel();
+
+      $nombre = $this->request->getVar('nombre');
+      $rol = $this->request->getVar('rol');
+      $region = $this->request->getVar('region');
+      $raza = $this->request->getVar('raza');
+      $fecha_lanzamiento = $this->request->getVar('fecha_lanzamiento');
+      $tipo_daño = $this->request->getVar('tipo_daño');
+
+      if ($ruta_imagen=$this->request->getFile('ruta_imagen')) {
+          $nuevoNombre = $ruta_imagen->getRandomName();
+          $ruta_imagen->move('./uploads/', $nuevoNombre);
+ 
+      $datos = [
+          'nombre' => $nombre,
+          'rol' => $rol,
+          'region' => $region,
+          'raza' => $raza,
+          'fecha_lanzamiento' => $fecha_lanzamiento,
+          'tipo_daño' => $tipo_daño,
+          'ruta_imagen' => $nuevoNombre
+      ];
+
+      $champ->insert($datos);
+
+ 
+    }
+
+    echo "Campeon guardado correctamente.";
+  }
+ }
