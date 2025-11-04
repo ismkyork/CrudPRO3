@@ -9,25 +9,38 @@
 </head>
 <body>
     <h1>Lista de campeones de League Of Legends</h1>
-    <?php print_r($campeones); ?>
-
+<a href="">Crear un campeon</a>
     <table class="table table-light">
         <thead class="thead-light">
             <tr>
                 <th>#</th>
                 <th>Imagen</th>
                 <th>Nombre</th>
+                <th>Rol</th>
+                <th>region</th>
+                <th>raza</th>
+                <th>fecha de lanzamiento</th>
+                <th>tipo de daño</th>
                 <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
+
+        <?php foreach($tabla_campeones as $campeon): ?>
             <tr>
-                <td>ID</td>
-                <td>Imagen</td>
-                <td>Nombre del campeon</td>
+            <td><?=$campeon['id']?></td>
+                <td><?=$campeon['ruta_imagen']?></td>
+                <td><?=$campeon['nombre']?></td>
+                <td><?=$campeon['rol']?></td>
+                <td><?=$campeon['region']?></td>
+                <td><?=$campeon['raza']?></td>
+                <td><?=$campeon['fecha_lanzamiento']?></td>
+                <td><?=$campeon['tipo_daño']?></td>
                 <td>Editar/borrar</td>
             </tr>
         </tbody>
+        <?php endforeach?>
     </table>
 </body>
 </html>
+

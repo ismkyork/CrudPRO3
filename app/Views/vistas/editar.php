@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edicion</title>
+    <title>Document</title>
 </head>
 <body>
-        <h1>Apartado de edicion</h1>
+    <h1>FORMULARIO DE EDITAR</h1>
 </body>
 </html>
