@@ -1,6 +1,8 @@
 <?=$cabecera?>
 
-        <a href="<?=base_url('crear')?>">Crear un campeon</a>
+        <a class="btn btn-success" href="<?=base_url('crear')?>">Crear un campeon</a>
+<br/>
+<br/>
 
     <table class="table table-light">
         <thead class="thead-light">
@@ -21,15 +23,19 @@
         <?php foreach($tabla_campeones as $campeon): ?>
             <tr>
             <td><?=$campeon['id']?></td>
-                <td><?=$campeon['ruta_imagen']?></td>
+                <td>
+                    <img class="img-thumbnail" src="<?=base_url()?>/uploads/<?=$campeon['ruta_imagen']?>" width="100" alt="">
+                    <?=$campeon['ruta_imagen']?>
+                
+                </td>
                 <td><?=$campeon['nombre']?></td>
                 <td><?=$campeon['rol']?></td>
                 <td><?=$campeon['region']?></td>
                 <td><?=$campeon['raza']?></td>
                 <td><?=$campeon['fecha_lanzamiento']?></td>
                 <td><?=$campeon['tipo_daño']?></td>
-                <td>Editar/
-                
+                <td>
+            <a href="<?=base_url('Editar/'.$campeon['id']);?>" class="btn btn-info" type="button">Editar</a>   
             <a href="<?=base_url('borrar/'.$campeon['id']);?>" class="btn btn-danger" type="button">Borrar</a>
             
             </td>

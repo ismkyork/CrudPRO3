@@ -21,13 +21,7 @@ class CampeonesController extends Controller{
       
     }
     
-    public function crear(){
 
-      $info['pieDePagina']=view('template/pieDePagina');
-      $info['cabecera']=view('template/cabecera');
-      
-      return view('vistas/crear',$info);
-    }
     
     public function editar(){
       
@@ -76,7 +70,6 @@ class CampeonesController extends Controller{
 
       $champ->insert($datos);
     }
-
-    echo "Campeon guardado correctamente.";
+    return $this->response->redirect(site_url());
   }
  }
