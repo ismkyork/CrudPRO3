@@ -49,9 +49,8 @@ class CampeonesController extends Controller{
       return $this->response->redirect(site_url('/inicio'));
 
     }
-}
 
-public function guardar(){
+  public function guardar(){
       $champ = new CampeonModel();
 
       $nombre = $this->request->getVar('nombre');
