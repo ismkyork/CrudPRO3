@@ -30,11 +30,47 @@ class CampeonesController extends Controller{
     }
     
     public function editar($id=null){
-      
-      $info['pieDePagina']=view('template/pieDePagina');
-      $info['cabecera']=view('template/cabecera');
-      
-      return view('vistas/editar',$info);
+
+    $campeon = new CampeonModel();
+    $datoscampeon['campeon'] = $campeon->where('id', $id)->first();
+
+    $datos = [
+        'pieDePagina' => view('template/pieDePagina'),
+        'cabecera'    => view('template/cabecera'),
+        'campeon'     => $datoscampeon['campeon']
+    ];
+
+    return view('vistas/editar', $datos); 
+}
+
+    public function actualizar(){
+        $champ = new CampeonModel();
+
+        $id = $this->request->getVar('id');
+        $nombre = $this->request->getVar('nombre');
+        $rol = $this->request->getVar('rol');
+        $region = $this->request->getVar('region');
+        $raza = $this->request->getVar('raza');
+        $fecha_lanzamiento = $this->request->getVar('fecha_lanzamiento');
+        $tipo_daño = $this->request->getVar('tipo_daño');
+
+        if ($ruta_imagen=$this->request->getFile('ruta_imagen')) {
+            $nuevoNombre = $ruta_imagen->getRandomName();
+            $ruta_imagen->move('./uploads/', $nuevoNombre);
+   
+        $datos = [
+            'nombre' => $nombre,
+            'rol' => $rol,
+            'region' => $region,
+            'ruta_imagen' => $nuevoNombre,
+            'raza' => $raza,
+            'fecha_lanzamiento' => $fecha_lanzamiento,
+            'tipo_daño' => $tipo_daño
+        ];
+        $id= $this->request->getVar('id');
+        $champ->update($id, $datos);
+      }
+      return $this->response->redirect(site_url());
     }
   
   public function borrar($id=null){

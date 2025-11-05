@@ -12,3 +12,4 @@ $routes->get('/crear', 'CampeonesController::crear');
 $routes->post('guardar', 'CampeonesController::guardar');
 $routes->get('/editar/(:num)', 'CampeonesController::editar/$1');
 $routes->get('/borrar/(:num)', 'CampeonesController::borrar/$1');
+$routes->post('actualizar', 'CampeonesController::actualizar');
