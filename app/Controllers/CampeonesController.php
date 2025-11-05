@@ -29,7 +29,7 @@ class CampeonesController extends Controller{
       return view('vistas/crear',$info);
     }
     
-    public function editar(){
+    public function editar($id=null){
       
       $info['pieDePagina']=view('template/pieDePagina');
       $info['cabecera']=view('template/cabecera');
@@ -48,7 +48,7 @@ class CampeonesController extends Controller{
       
       $campeon->where('id',$id)->delete($id);
      
-         return $this->response->redirect(base_url());
+        return $this->response->redirect(site_url());
     
     }
 
@@ -78,8 +78,6 @@ class CampeonesController extends Controller{
 
       $champ->insert($datos);
     }
-
-         return $this->response->redirect(base_url());
-
+    return $this->response->redirect(site_url());
   }
  }
