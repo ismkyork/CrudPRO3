@@ -28,7 +28,11 @@
                 <td><?=$campeon['raza']?></td>
                 <td><?=$campeon['fecha_lanzamiento']?></td>
                 <td><?=$campeon['tipo_daño']?></td>
-                <td>Editar/borrar</td>
+                <td>Editar/
+                
+            <a href="<?=base_url('borrar/'.$campeon['id']);?>" class="btn btn-danger" type="button">Borrar</a>
+            
+            </td>
             </tr>
         </tbody>
         <?php endforeach?>
