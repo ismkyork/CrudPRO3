@@ -35,7 +35,7 @@
                 <td><?=$campeon['fecha_lanzamiento']?></td>
                 <td><?=$campeon['tipo_daño']?></td>
                 <td>
-            <a href="<?=base_url('Editar/'.$campeon['id']);?>" class="btn btn-info" type="button">Editar</a>   
+            <a href="<?=base_url('editar/'.$campeon['id']);?>" class="btn btn-info" type="button">editar</a>   
             <a href="<?=base_url('borrar/'.$campeon['id']);?>" class="btn btn-danger" type="button">Borrar</a>
             
             </td>

@@ -21,9 +21,15 @@ class CampeonesController extends Controller{
       
     }
     
+    public function crear(){
 
+      $info['pieDePagina']=view('template/pieDePagina');
+      $info['cabecera']=view('template/cabecera');
+      
+      return view('vistas/crear',$info);
+    }
     
-    public function editar(){
+    public function editar($id=null){
       
       $info['pieDePagina']=view('template/pieDePagina');
       $info['cabecera']=view('template/cabecera');
