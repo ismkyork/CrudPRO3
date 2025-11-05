@@ -38,16 +38,18 @@ class CampeonesController extends Controller{
     }
   
   public function borrar($id=null){
-      $campeon= new campeon();
+
+  
+      $campeon= new CampeonModel();
       $datoscampeon=$campeon->where('id',$id)->first();
 
-      $ruta=('../public/uploads/'.$datoscampeon['imagen']);
+      $ruta=('../public/uploads/'.$datoscampeon['ruta_imagen']);
       unlink($ruta);
-
-      $libro->where('id',$id)->delete($id);
-
-      return $this->response->redirect(site_url('/inicio'));
-
+      
+      $campeon->where('id',$id)->delete($id);
+     
+        return $this->response->redirect(site_url());
+    
     }
 
   public function guardar(){
