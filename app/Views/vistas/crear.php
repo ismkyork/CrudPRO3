@@ -6,6 +6,7 @@
         <h5 class="mb-0">Datos del Campeón</h5>
     </div>
     <div class="card-body">
+      
         <form method="post" action="<?= base_url('guardar') ?>" enctype="multipart/form-data">
 
             <div class="form-group mb-3">
@@ -91,7 +92,5 @@
     </div>
 </div>
 </div>
-
-
 
 <?=$pieDePagina?>

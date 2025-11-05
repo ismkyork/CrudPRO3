@@ -36,8 +36,22 @@ class CampeonesController extends Controller{
       
       return view('vistas/editar',$info);
     }
+  
+  public function borrar($id=null){
+      $campeon= new campeon();
+      $datoscampeon=$campeon->where('id',$id)->first();
 
-    public function guardar(){
+      $ruta=('../public/uploads/'.$datoscampeon['imagen']);
+      unlink($ruta);
+
+      $libro->where('id',$id)->delete($id);
+
+      return $this->response->redirect(site_url('/inicio'));
+
+    }
+}
+
+public function guardar(){
       $champ = new CampeonModel();
 
       $nombre = $this->request->getVar('nombre');
@@ -62,8 +76,6 @@ class CampeonesController extends Controller{
       ];
 
       $champ->insert($datos);
-
- 
     }
 
     echo "Campeon guardado correctamente.";
