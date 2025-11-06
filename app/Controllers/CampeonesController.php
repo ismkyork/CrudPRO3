@@ -137,15 +137,11 @@ class CampeonesController extends Controller{
               $session->setFlashdata('mensaje','Revise la información');
             
             
-          /* return $this->response->redirect(base_url());
+           return $this->response->redirect(base_url());
             return redirect()->back()->WithInput();
-          */
+          
 
       }
-  
-  
-    }
-
       $nombre = $this->request->getVar('nombre');
       $rol = $this->request->getVar('rol');
       $region = $this->request->getVar('region');
@@ -171,3 +167,4 @@ class CampeonesController extends Controller{
     }
     return $this->response->redirect(site_url());
   }
+}
