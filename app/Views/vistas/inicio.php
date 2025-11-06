@@ -1,6 +1,7 @@
 <?=$cabecera?>
 
-        <a class="btn btn-success" href="<?=base_url('crear')?>">Crear un campeon</a>
+
+        <a class="btn btn-success" href="<?=base_url('crear')?>">Crear un campeón</a>
 <br/>
 <br/>
 
