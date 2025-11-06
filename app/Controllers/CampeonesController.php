@@ -69,7 +69,7 @@ class CampeonesController extends Controller{
         ];
         $id= $this->request->getVar('id');
         $champ->update($id, $datos);
-
+        
         $validar = $this->validate([
             'ruta_imagen' => [
                 'uploaded[ruta_imagen]',
@@ -119,19 +119,32 @@ class CampeonesController extends Controller{
       $champ = new CampeonModel();
 
       $validacion= $this->validate ([
-        'nombre'=>'required|min_length[3]',
+        'nombre'=>'required|min_length[2]',
           'ruta_imagen'=> [
             'uploaded[ruta_imagen]',
             'mime_in[ruta_imagen,image/jpg,image/jpeg,image/png]',
             'max_size[ruta_imagen,1024]',
-        ]
+          ],
+            'region'=> 'required', 
+            'rol'=> 'required', 
+            'raza'=> 'required', 
+            'fecha_lanzamiento'=> 'required|valid_date[Y-m-d]',
+            'tipo_daño' => 'required',
 
+            ]);
+            if(!$validacion){
+              $session= session();
+              $session->setFlashdata('mensaje','Revise la información');
+            
+            
+          /* return $this->response->redirect(base_url());
+            return redirect()->back()->WithInput();
+          */
 
-      ]);
-      if(!$validacion){
-
-        return $this->response->redirect(base_url(''));
       }
+  
+  
+    }
 
       $nombre = $this->request->getVar('nombre');
       $rol = $this->request->getVar('rol');
@@ -158,4 +171,3 @@ class CampeonesController extends Controller{
     }
     return $this->response->redirect(site_url());
   }
- }
