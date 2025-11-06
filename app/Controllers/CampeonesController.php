@@ -114,7 +114,24 @@ class CampeonesController extends Controller{
     }
 
   public function guardar(){
+
+
       $champ = new CampeonModel();
+
+      $validacion= $this->validate ([
+        'nombre'=>'required|min_length[3]',
+          'ruta_imagen'=> [
+            'uploaded[ruta_imagen]',
+            'mime_in[ruta_imagen,image/jpg,image/jpeg,image/png]',
+            'max_size[ruta_imagen,1024]',
+        ]
+
+
+      ]);
+      if(!$validacion){
+
+        return $this->response->redirect(base_url(''));
+      }
 
       $nombre = $this->request->getVar('nombre');
       $rol = $this->request->getVar('rol');
