@@ -11,10 +11,10 @@
                 <th>Imagen</th>
                 <th>Nombre</th>
                 <th>Rol</th>
-                <th>region</th>
-                <th>raza</th>
-                <th>fecha de lanzamiento</th>
-                <th>tipo de daño</th>
+                <th>Region</th>
+                <th>Raza</th>
+                <th>Fecha De Lanzamiento</th>
+                <th>Tipo De Daño</th>
                 <th>Acciones</th>
             </tr>
         </thead>

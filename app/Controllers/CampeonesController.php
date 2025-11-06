@@ -68,6 +68,25 @@ class CampeonesController extends Controller{
             'tipo_daño' => $tipo_daño
         ];
         $id= $this->request->getVar('id');
+
+
+            $validacion= $this->validate ([
+        'nombre'=>'required|min_length[2]',
+            'region'=> 'required', 
+            'rol'=> 'required', 
+            'raza'=> 'required', 
+            'fecha_lanzamiento'=> 'required|valid_date[Y-m-d]',
+            'tipo_daño' => 'required'
+            ]);
+            if(!$validacion){
+              $session= session();
+              $session->setFlashdata('mensaje','Revise la información');
+              return redirect()->back()->WithInput();
+            
+          
+      }
+
+
         $champ->update($id, $datos);
         
         $validar = $this->validate([
@@ -135,12 +154,9 @@ class CampeonesController extends Controller{
             if(!$validacion){
               $session= session();
               $session->setFlashdata('mensaje','Revise la información');
+              return redirect()->back()->WithInput();
             
-            
-           return $this->response->redirect(base_url());
-            return redirect()->back()->WithInput();
           
-
       }
       $nombre = $this->request->getVar('nombre');
       $rol = $this->request->getVar('rol');
