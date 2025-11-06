@@ -14,4 +14,4 @@
         <h1>Lista de Campeones de League of Legends</h1>
     </div>
 </header>
-    <div class="container">
+    <div class="container mt-2">

@@ -1,6 +1,17 @@
 <?=$cabecera?> 
 
 
+<?php if(session('mensaje')){?>
+
+<div class="alert alert-danger" role="alert">
+    <?php
+     echo session('mensaje');
+     ?>
+</div>
+<?php
+  }
+
+ ?> 
 <div class="card shadow-lg mb-4">
     <div class="card-header bg-primary text-white">
         <h5 class="mb-0">Datos del Campeón</h5>
@@ -11,18 +22,18 @@
 
             <div class="form-group mb-3">
                 <label for="nombre">Nombre del Campeón</label>
-                <input id="nombre" class="form-control" type="text" name="nombre" placeholder="Ej: Bardo" required>
+                <input id="nombre" value="<?=old('nombre')?>" class="form-control" type="text" name="nombre" placeholder="Ej: Bardo" >
             </div>
 
             <div class="form-group mb-3">
                 <label for="ruta_imagen">Imagen del Campeón</label>
-                <input id="ruta_imagen" class="form-control-file form-control" type="file" name="ruta_imagen" required>
+                <input id="ruta_imagen" class="form-control-file form-control" type="file" name="ruta_imagen">
                 <small class="form-text text-muted">Sube una imagen (se guardará la ruta).</small>
             </div>
 
             <div class="form-group mb-3">
                 <label for="rol">Rol</label>
-                <select id="rol" class="form-control" name="rol" required>
+                <select id="rol" class="form-control" name="rol" >
                     <option value="" disabled selected>Selecciona un Rol</option>
                     <option value="Top">Top</option>
                     <option value="Jungla">Jungla</option>
@@ -34,7 +45,7 @@
 
             <div class="form-group mb-3">
                 <label for="region">Región</label>
-                <select id="region" class="form-control" name="region" required>
+                <select id="region" class="form-control" name="region">
                     <option value="" disabled selected>Selecciona una Región</option>
                     <option value="Aguasturbias">Aguasturbias</option>
                     <option value="Ciudad de Bandle">Ciudad de Bandle</option>
@@ -54,7 +65,7 @@
 
             <div class="form-group mb-3">
                 <label for="raza">Raza</label>
-                <select id="raza" class="form-control" name="raza" required>
+                <select id="raza" class="form-control" name="raza">
                     <option value="" disabled selected>Selecciona una Raza</option>
                     <option value="Humano">Humano</option>
                     <option value="Vastaya">Vastaya</option>
@@ -71,13 +82,13 @@
 
             <div class="form-group mb-3">
                 <label for="fecha_lanzamiento">Fecha de Lanzamiento</label>
-                <input id="fecha_lanzamiento" class="form-control" type="text" name="fecha_lanzamiento" placeholder="Ej: AAAA-MM-DD o 2015-10-05" required>
+                <input id="fecha_lanzamiento" class="form-control" type="text" name="fecha_lanzamiento" placeholder="Ej: AAAA-MM-DD o 2015-10-05">
                 <small class="form-text text-muted">Ingresa la fecha en formato AAAA-MM-DD.</small>
             </div>
 
             <div class="form-group mb-4">
                 <label for="tipo_daño">Tipo de Daño</label>
-                <select id="tipo_daño" class="form-control" name="tipo_daño" required>
+                <select id="tipo_daño" class="form-control" name="tipo_daño" >
                     <option value="" disabled selected>Selecciona el Tipo de Daño</option>
                     <option value="magico">Mágico</option>
                     <option value="fisico">Físico</option>
