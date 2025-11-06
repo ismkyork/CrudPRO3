@@ -36,7 +36,10 @@
                 <td><?=$campeon['tipo_daño']?></td>
                 <td>
             <a href="<?=base_url('editar/'.$campeon['id']);?>" class="btn btn-info" type="button">editar</a>   
-            <a href="<?=base_url('borrar/'.$campeon['id']);?>" class="btn btn-danger" type="button">Borrar</a>
+              <a href="<?=base_url('borrar/'.$campeon['id']);?>"
+             onclick="return confirm('¿Seguro que deseas borrar este campeón?')"
+            class="btn btn-danger" type="button">Borrar</a>
+                    
             
             </td>
             </tr>
