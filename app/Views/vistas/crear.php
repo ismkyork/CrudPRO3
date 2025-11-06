@@ -2,7 +2,7 @@
 
 <div class="card shadow-lg mb-4">
     <div class="card-header bg-primary text-white">
-        <h5 class="mb-0">Datos del Campeón</h5>
+        <h5 class="mb-0">Insertar Datos del Campeón</h5>
     </div>
     <div class="card-body">
       
@@ -87,7 +87,7 @@
             <button type="submit" class="btn btn-success btn-lg w-100">
                 <i class="fas fa-save me-2"></i> Guardar Campeón
             </button>
-            <a href="<?=base_url('')?>" class="btn btn-info btn-lg w-100">Volver al inicio</a>
+           
         </form>
     </div>
 </div>

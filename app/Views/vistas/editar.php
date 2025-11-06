@@ -24,8 +24,8 @@
                     <?=$campeon['ruta_imagen']?>
                 
                 </td>
-
-                <input id="ruta_imagen" class="form-control-file form-control" type="file" name="ruta_imagen" required>
+                
+                <input id="ruta_imagen" value="<?=$campeon['ruta_imagen']?>" class="form-control-file form-control" type="file" name="ruta_imagen"  >
                 <small class="form-text text-muted">Sube una imagen (se guardará la ruta).</small>
             </div>
 
@@ -33,13 +33,13 @@
                 <label for="rol">Rol</label>
                  <select id="rol" class="form-control" name="rol" required>
 
-                <option value="" disabled>Selecciona un Rol</option> 
-                <option value="Top"<?=($campeon['rol']=='Top')?'selected':''?>>Top</option>
-                <option value="Jungla"<?=($campeon['rol']=='Jungla')?'selected':''?>>Jungla</option>
-                <option value="Mid"<?=($campeon['rol']=='Mid')?'selected':''?>>Mid</option>
-                <option value="ADC"<?=($campeon['rol']=='ADC')?'selected':''?>>ADC</option>
-                <option value="Support"<?=($campeon['rol']=='Support')?'selected':''?>>Support</option>
-                </select>
+                 <option value="" disabled>Selecciona un Rol</option> 
+                 <option value="Top"<?=($campeon['rol']=='Top')?'selected':''?>>Top</option>
+                 <option value="Jungla"<?=($campeon['rol']=='Jungla')?'selected':''?>>Jungla</option>
+                 <option value="Mid"<?=($campeon['rol']=='Mid')?'selected':''?>>Mid</option>
+                 <option value="ADC"<?=($campeon['rol']=='ADC')?'selected':''?>>ADC</option>
+                 <option value="Support"<?=($campeon['rol']=='Support')?'selected':''?>>Support</option>
+                 </select>
             </div>
 
             <div class="form-group mb-3">
@@ -51,7 +51,7 @@
                     <option value="Ciudad de Bandle"<?= ($campeon['region']=='Ciudad de Bandle')?'selected':''?>>Ciudad de Bandle</option>
                     <option value="Demacia"<?= ($campeon['region']=='Demacia')?'selected':''?>>Demacia</option>
                     <option value="Freljord"<?= ($campeon['region']=='Freljord')?'selected':''?>>Freljord</option>
-                    <option value="Vacio"<?= ($campeon['region']=='Vacio')?'selected':''?>>Vacio</option>
+                    <option value="Vacio"<?= ($campeon['region']=='Vacio')?'selected':''?>>Vacío</option>
                     <option value="Isla de la Sombra"<?=($campeon['region']=='Isla de la Sombra')?'selected':''?>>Isla de la Sombra</option>
                     <option value="Ixtal"<?= ($campeon['region']=='Ixtal')?'selected':''?>>Ixtal</option>
                     <option value="Jonia"<?= ($campeon['region']=='Jonia')?'selected':''?>>Jonia</option>
@@ -66,13 +66,13 @@
             <div class="form-group mb-3">
                 <label for="raza">Raza</label>
                 <select id="raza" class="form-control" name="raza" required>
-                    <option value=""disabled>Selecciona una Raza</option>  
+                    <option value=""disabled>Selecciona una Raza</option> 	
                     <option value="Humano"<?=($campeon['raza']=='Humano')?'selected':''?>>Humano</option>
                     <option value="Vastaya"<?=($campeon['raza']=='Vastaya')?'selected':''?>>Vastaya</option>
                     <option value="Yordle"<?=($campeon['raza']=='Yordle')?'selected':''?>>Yordle</option>
                     <option value="Ascendidos"<?=($campeon['raza']=='Ascendidos')?'selected':''?>>Ascendidos</option>
                     <option value="Darkin"<?=($campeon['raza']=='Darkin')?'selected':''?>>Darkin</option>
-                    <option value="Ente Vacio"<?=($campeon['raza']=='Ente Vacio')?'selected':''?>>Ente Vacio</option>
+                    <option value="Ente Vacio"<?=($campeon['raza']=='Ente Vacio')?'selected':''?>>Ente Vacío</option>
                     <option value="Espíritu/Demonio"<?=($campeon['raza']=='Espíritu/Demonio')?'selected':''?>>Espíritu/Demonio</option>
                     <option value="Aspecto"<?=($campeon['raza']=='Aspecto')?'selected':''?>>Aspecto</option>
                     <option value="Golem/Constructo"<?=($campeon['raza'] == 'Golem/Constructo')?'selected':''?>>Golem/Constructo</option>
@@ -94,14 +94,14 @@
                     <option value="Mágico"<?=($campeon['tipo_daño']=='Mágico')?'selected':''?>>Mágico</option>
                     <option value="Físico"<?=($campeon['tipo_daño']=='Físico')?'selected':''?>>Físico</option>
                     <option value="Híbrido"<?=($campeon['tipo_daño']=='Híbrido')?'selected':''?>>Híbrido</option>
-    </select>
-</div>
+                 </select>
+            </div>
 
             <button type="submit" class="btn btn-success btn-lg w-100">
                 <i class="fas fa-save me-2"></i> Actualizar Campeón
             </button>
             <br>
-             <a href="<?=base_url('')?>" class="btn btn-info btn-lg w-100">Volver al inicio</a>
+            
         </form>
     </div>
 </div>
