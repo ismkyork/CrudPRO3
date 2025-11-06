@@ -9,15 +9,18 @@
             
             <link rel="stylesheet" href="<?php echo base_url('css/style.css'); ?>">
             <script src="https://kit.fontawesome.com/1457d8f62b.js" crossorigin="anonymous"></script>
-        </head>
-<body>
-        <header class="bg-dark text-white p-4">
+
+</head>
+<body style="background: linear-gradient(to bottom, #B0C4DE, #E0FFFF);">
+<header class="bg-dark text-white p-4">
             <div class="container d-flex align-items-center">
                 
                 <a href="/CrudPRO3/public/" class="me-3"> 
                     <i class="fa-solid fa-house fa-2x"></i>
                 </a>
-                <h1 class="mb-0 text-center flex-grow-1">Lista de Campeones de League of Legends</h1> 
+                <h1 class="mb-0 text-center flex-grow-1">
+                    <span class="badge text-bg-info fs-3 p-2 shadow-lg">Lista de Campeones de League of Legends</span>
+                </h1>
                 </div>
         </header>
     <div class="container mt-2">
