@@ -69,9 +69,34 @@ class CampeonesController extends Controller{
         ];
         $id= $this->request->getVar('id');
         $champ->update($id, $datos);
+
+        $validar = $this->validate([
+            'ruta_imagen' => [
+                'uploaded[ruta_imagen]',
+                'mime_in[ruta_imagen,image/jpg,image/jpeg,image/png]',
+                'max_size[ruta_imagen,4096]',
+            ],
+        ]);
+
+        if($validar) {
+            if($ruta_imagen=$this->request->getFile('ruta_imagen')) {
+
+              $datoscampeon=$champ->where('id',$id)->first();
+              $ruta=('../public/uploads/'.$datoscampeon['ruta_imagen']);
+              unlink($ruta);
+
+                $nuevoNombre = $ruta_imagen->getRandomName();
+                $ruta_imagen->move('./uploads/', $nuevoNombre);
+                
+                $datos['ruta_imagen'] = $nuevoNombre;
+                $champ->update($id, $datos);  
+            }
+        }
+
       }
       return $this->response->redirect(site_url());
     }
+
   
   public function borrar($id=null){
 
