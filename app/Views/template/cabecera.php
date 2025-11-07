@@ -25,8 +25,6 @@
         </header>
     <div class="container mt-2">
 
-
-
 <?php if(session('mensaje')){?>
 
 <div class="alert alert-danger" role="alert">

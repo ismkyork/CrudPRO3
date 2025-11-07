@@ -61,7 +61,7 @@ class CampeonesController extends Controller{
             $tipo_daño = $this->request->getVar('tipo_daño');
 
             $validationRules = [
-                'nombre' => 'required|min_length[2]',
+                'nombre' => 'required|min_length[2]|alpha',
                 'region' => 'required',
                 'rol' => 'required',
                 'raza' => 'required',
